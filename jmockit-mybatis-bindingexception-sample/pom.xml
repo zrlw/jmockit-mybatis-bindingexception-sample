@@ -9,12 +9,12 @@
   <name>mybatis-h2-sample</name>
 
   <parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.1.RELEASE</version>
-		<relativePath />
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-parent</artifactId>
+      <version>2.1.1.RELEASE</version>
+      <relativePath />
   </parent>
-	
+   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -22,8 +22,7 @@
     <jmockit.version>1.49</jmockit.version>
   </properties>
 
-  <dependencies> 
-      
+  <dependencies>      
     <dependency>
         <groupId>org.jmockit</groupId>
         <artifactId>jmockit</artifactId>
@@ -31,11 +30,11 @@
         <scope>test</scope>
     </dependency>
      
-	<dependency>
-		<groupId>org.mybatis.spring.boot</groupId>
-		<artifactId>mybatis-spring-boot-starter</artifactId>
-		<version>2.1.1</version>
-	</dependency>
+   <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>2.1.1</version>
+   </dependency>
     
     <dependency>
         <groupId>junit</groupId>
@@ -43,86 +42,81 @@
         <scope>test</scope>
     </dependency>
     
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-web</artifactId>
-	</dependency>
+   <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+   </dependency>
 
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-devtools</artifactId>
-		<scope>runtime</scope>
-	</dependency>
-	
-	<dependency>
-		<groupId>com.h2database</groupId>
-		<artifactId>h2</artifactId>
-		<scope>runtime</scope>
-	</dependency>
-	
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-test</artifactId>
-		<scope>test</scope>
-	</dependency>
-	
-	<dependency>
-		<groupId>io.springfox</groupId>
-		<artifactId>springfox-swagger2</artifactId>
-		<version>2.9.2</version>
-	</dependency>
+   <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+   </dependency>
+   
+   <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>runtime</scope>
+   </dependency>
+   
+   <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+   </dependency>
+   
+   <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>2.9.2</version>
+   </dependency>
 
-	<dependency>
-		<groupId>io.springfox</groupId>
-		<artifactId>springfox-swagger-ui</artifactId>
-		<version>2.9.2</version>
-	</dependency>
-
-
+   <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <version>2.9.2</version>
+   </dependency>
   </dependencies>
 
   <build>
-	<plugins>
-		<plugin>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-maven-plugin</artifactId>
+   <plugins>   
+      <plugin>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
 
-    	<plugin>
-	       <artifactId>maven-surefire-plugin</artifactId>
-		    <configuration>
-		      <testFailureIgnore>true</testFailureIgnore>
-		      <argLine>
-		          -javaagent:"${settings.localRepository}"/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
-		      </argLine>
-		      <includes>
+       <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <testFailureIgnore>true</testFailureIgnore>
+            <argLine>
+                -javaagent:"${settings.localRepository}"/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
+            </argLine>
+            <includes>
                <include>**/*TestSuit.java</include>
             </includes>
-		      <disableXmlReport>true</disableXmlReport>
-		    </configuration>
-	    </plugin>
+            <disableXmlReport>true</disableXmlReport>
+          </configuration>
+       </plugin>   
+   </plugins>
    
-	</plugins>
-	
     <resources>
-	    <resource>
-		    <directory>src/main/resources</directory>
-	        <includes>
-		      <include>**/**</include>
-	        </includes>
-	        <filtering>false</filtering>
-	    </resource>
-	    <resource>
-		    <directory>src/main/java</directory>
-		    <includes>
-			  <include>**/*.properties</include>
-			  <include>**/*.xml</include>
-			  <include>**/*.tld</include>
-		    </includes>
-		    <filtering>false</filtering>
-	    </resource>
-    </resources>
-    
-  </build>
-    
+       <resource>
+          <directory>src/main/resources</directory>
+           <includes>
+            <include>**/**</include>
+           </includes>
+           <filtering>false</filtering>
+       </resource>
+       <resource>
+          <directory>src/main/java</directory>
+          <includes>
+           <include>**/*.properties</include>
+           <include>**/*.xml</include>
+           <include>**/*.tld</include>
+          </includes>
+          <filtering>false</filtering>
+       </resource>
+    </resources>    
+  </build>    
 </project>
